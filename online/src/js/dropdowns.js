@@ -29,7 +29,7 @@ function dropdowns () {
   trackCheckbox(form.validate.spec);
 
   // Change the button text whenever a new method is selected
-  form.method.menu.find("a").on("click", (event) => {
+  form.method.menu.find("a").on("click", function (event) {
     form.method.menu.dropdown("toggle");
     event.stopPropagation();
     let methodName = $(this).data("value");
@@ -166,10 +166,10 @@ function trackButtonLabel (methodName) {
 /**
  * Examines the given checkboxes, and returns arrays of checked and unchecked values.
  *
- * @param {...jQuery} checkboxes
+ * @param {...jQuery} _checkboxes
  * @returns {{checked: string[], unchecked: string[]}}
  */
-function getCheckedAndUnchecked (checkboxes) {
+function getCheckedAndUnchecked (_checkboxes) {
   let checked = [], unchecked = [];
   for (let i = 0; i < arguments.length; i++) {
     let checkbox = arguments[i];
